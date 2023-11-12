@@ -1,6 +1,6 @@
-import TodoForm from '../components/TodoForm.jsx'
-import TodoTable from '../components/TodoTable.jsx'
-import TodoSearchForm from '../components/TodoSearchForm.jsx'
+import TodoForm from '../components/TodoForm'
+import TodoTable from '../components/TodoTable'
+import TodoSearchForm from '../components/TodoSearchForm'
 
 
 const TodoListPage = () => {

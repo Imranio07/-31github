@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { DeleteIcon } from "./UI/icons";
-import { fetchTodos, asyncRemoveTodo } from "../store/todosReducer";
+import { fetchTodos } from "../store/todosSlice";
 
 const todoItems = [
   { id: 1, name: "Item 1" },
@@ -10,9 +10,10 @@ const todoItems = [
   { id: 3, name: "Item 3" },
 ];
 
+const todosSelector = (state) => state.todos 
+
 const TodoTable = () => {
-  // const [items, setItems] = useState(todoItems);
-  const items = useSelector((state) => state.todos.items);
+  const {items, loading, error} = useSelector(todosSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,12 +22,14 @@ const TodoTable = () => {
 
   const handleDeleteClick = (id) => {
     console.log(id);
-    dispatch(asyncRemoveTodo(id))
   };
 
   const handleCheckClick = (id) => {
     console.log(id);
   };
+
+  if (error) return <p>Error: {error}</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>
@@ -40,6 +43,7 @@ const TodoTable = () => {
               <input
                 type="checkbox"
                 className="default:ring-2 checked:bg-green invisible @sm:visible"
+                checked={item.completed}
                 onClick={() => handleCheckClick(item.id)}
               />
             </div>

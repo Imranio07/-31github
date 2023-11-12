@@ -1,29 +1,24 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-
-import { asyncAddTodo } from "../store/todosReducer";
 
 
 const TodoForm = () => {
   const [newTodo, setNewTodo] = useState('');
-  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!newTodo) return;
 
-    // dispatch(addTodo(newTodo));
-    dispatch(asyncAddTodo(newTodo));
+    //
     setNewTodo('');
   }
 
   return (
       <form onSubmit={handleSubmit} className="max-w-full lg:w-1/2 flex justify-center self-center gap-2">
         <div>
-          <input
-            type="text"
-            className='rounded-sm px-2 py-1'
-            value={newTodo}
+          <input 
+            type="text" 
+            className='rounded-sm px-2 py-1' 
+            value={newTodo} 
             onChange={(e) => setNewTodo(e.target.value)}/>
         </div>
         <div>

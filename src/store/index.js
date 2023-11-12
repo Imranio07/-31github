@@ -1,11 +1,12 @@
-import { legacy_createStore as createStore, combineReducers, applyMiddleware } from "redux";
-import { counterReducer } from "./counterReducer";
-import { todosReducer } from "./todosReducer";
-import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import { counterReducer } from "./counterSlice";
+import { userReducer } from "./userSlice";
+import { todosReducer } from "./todosSlice";
 
-const rootReducer = combineReducers({
-    todos: todosReducer,
+export const store = configureStore({
+  reducer: {
     counter: counterReducer,
-})
-
-export const store = createStore(rootReducer, applyMiddleware(thunk));
+    user: userReducer,
+    todos: todosReducer,
+  },
+});

@@ -1,11 +1,11 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout.jsx";
-import CounterPage from "./pages/CounterPage.jsx";
-import TodoListPage from "./pages/TodoListPage.jsx";
-import UserPage from "./pages/UserPage.jsx";
-import PostEditPage from "./pages/PostEditPage.jsx";
-import PostsListPage from "./pages/PostsListPage.jsx";
+import Layout from "./components/Layout";
+import CounterPage from "./pages/CounterPage";
+import TodoListPage from "./pages/TodoListPage";
+import UserPage from "./pages/UserPage";
+import PostEditPage from "./pages/PostEditPage";
+import PostsListPage from "./pages/PostsListPage";
 
 
 function App() {
