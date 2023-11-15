@@ -1,0 +1,6 @@
+.m-2{
+    display: flex;
+    gap:100px;
+    align-items: center;
+    justify-content: center;
+}
