@@ -1,29 +1,60 @@
-// async await
-// const url = 'https://jsonplaceholder.typicode.com/todos/1'
+//event loop - Цикл Событий
+// Основы  асинхронасти
+//console.log(1)
+//console.log(2)
+//console.log(3)
+//console.log(4)
 //
-// const fetchData = async ()=>{
-//     try{
-//     const response = await fetch(url)
-//     const data = await response.json()
-//     console.log(data)
-// } catch(e) {
-//     console.error(e, 'error')
+// setTimeout(() => {
+//     console.log('1')
+// }, 0)
+//
+// setTimeout(() => {
+//     console.log('2')
+// }, 0)
+// console.log(3)
+// setTimeout(() => {
+//     console.log('4')
+// }, 0)
+//
+// const interval = setInterval(() => {
+//     console.log('Hello')
+// },1000)
+// setTimeout(() => {
+//     clearInterval(interval)
+// },5000)
+
+
+
+// const logger = () => console.log('LOG!')
+//
+// setTimeout(logger, 3000)
+
+//evet loop - цикл событий
+// const btn =  document.querySelector('button').onclick = () => {
+//     console.log('btn')
+// }
+
+// var num=0
+//
+// function count (){
+//     num = num + 1
+//     if(num=999999999999999999999999999999){
+//         count()
 //     }
+//     console.log(num)
+//     count()
 // }
-//
-// fetchData()
+// count()
 
+//HOF-high ordered functions
 
-// const obj = {
-//     name:'Nurdin',
-//     age:19
-// }
-// const {name,age}=obj
-// console.log(name,age)
+const subject = prompt('subject?')
 
-
-const obj = {
-    name:'Nurdin',
-    age:19
+const doHomeWork = ( finish, subject )=> {
+    alert (`starting my ${subject} homework`)
+    finish()
 }
-const obj1.name = 'kolya'
+const alertFinish = () => alert('FINISH!')
+doHomeWork(alertFinish, subject)
+
