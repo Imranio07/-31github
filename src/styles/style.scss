@@ -1,0 +1,30 @@
+/* ITCSS: Settings */
+@import '_root';
+@import 'var';
+
+/* ITCSS: Tools */
+@import 'mixins';
+
+/* ITCSS: Resets */
+@import '../../node_modules/normalize.css/normalize';
+
+/* ITCSS: Fonts */
+@import 'modak';
+@import 'icofont';
+
+/* ITCSS: Base */
+@import 'global';
+@import 'utility';
+
+/* ITCSS: Sections */
+@import 'main';
+@import 'footer';
+@import 'cart';
+
+/* ITCSS: Components */
+@import 'card';
+@import 'topNav';
+@import 'splash';
+
+/* ITCSS: Trumps */
+@import 'mediaqueries';
