@@ -1,0 +1,62 @@
+ body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+/*свойства для header*/
+.header {
+    height: 50px;
+    width: 100%;
+    background-color: green;
+}
+.header h1 {
+    margin: 0; /* Убрать отступы вокруг текста */
+}
+/*свойства для чата*/
+.chats {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.chat {
+    flex: 1;
+    overflow-y: scroll;
+    height: calc(100vh - 160px);
+}
+.chat-header::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #000; /* Цвет линии (можете изменить на свой выбор) */
+    margin-top: 5px; /* Расстояние между "Chat" и линией */
+}
+
+.list--of-chat {
+    text-align: center;
+    width: 200px;
+    height: calc(100vh - 160px);/*находим размер страницы и минусуем от высот которые мы добавляли*/
+    background-color: yellow;
+    overflow-y: scroll;
+}
+
+.footer {
+    height: 100px;
+    width: 100%;
+    background-color: red;
+    position: fixed;
+    bottom: 0;
+}
+.input{
+    width: 100%;
+    height: 30px;
+}
