@@ -1,29 +1,16 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
-import { getCartTotal } from "../features/cartSlice";
+const activeLink = ({ isActive }) => isActive ? 'active-link' : '';
 
-export default function App() {
-  const { cart, totalQuantity } = useSelector((state) => state.allCart);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCartTotal());
-  }, [cart]);
-
+const Navbar = () => {
   return (
-    <nav >
-      <div style={{  display:"flex",margin: "0 auto", padding: "10px" ,backgroundColor: "blue",color: "yellow"}}>
-        <h2 style={{justifyContent:"start"}}>magazin.kg</h2>
-        <span style={{ marginRight: "120px" }}>
-          <Link to="/"><h3  style={{ color: "black",marginRight: "120px" }}><b>All Product ||</b></h3></Link>
-        </span>
-        <span>
-          <Link to="/cart"><h3 style={{ color: "black" }}><b>Cart ({totalQuantity})</b></h3>
-          </Link>
-        </span>
-      </div>
+    <nav>
+      <ul> 
+        <li><NavLink to="list-products" className={activeLink({ isActive: true })}>Products</NavLink></li>
+        <li><NavLink to="/basket" className={activeLink({ isActive: true })}>basket of goods</NavLink></li>
+      </ul>
     </nav>
   );
 }
+
+export default Navbar;

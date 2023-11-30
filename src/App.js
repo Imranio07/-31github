@@ -1,20 +1,26 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Navbar from "./components/Navbar";
-import ProductCard from "./components/ProductCard";
-import CartPage from "./components/cartPage";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import ProductList from "./productList";
+import {Provider} from "react-redux"
+import store from "./redux/store"
+import Basket from "./basket";
+
+const routes = {
+  posts: "/posts",
+};
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<ProductCard />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <>
+        <Provider store={store}>
+      <Routes>
+          <Route path="/" element={<Layout />} >
+                  <Route path="list-products" element={<ProductList />} />
+              <Route path="basket" element={<Basket/>} />
+          </Route>
+      </Routes>
+    </Provider>
+    </>
   );
 }
 
